@@ -352,13 +352,24 @@ export const Camera = () => {
 
   async function fetchname() {
     try {
-      const res = await fetch(
-        `https://shopping.yahooapis.jp/ShoppingWebService/V3/itemSearch?appid=${YAHOO_API_KEY}&jan_code=${code}`
-      );
-      if (!res.ok) {
-        throw new Error("fetchに失敗しました");
+      const url = `https://yahooshop.azurewebsites.net/api/httpYahooApi`;
+      const sendNum = code;
+      console.log("Sending Jancode");
+      const requestData = {
+        jancode: sendNum,
+      };
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestData),
+      });
+      if (!response.ok) {
+        console.log("Error");
+        return;
       }
-      const data = await res.json();
+      const data = await response.json();
       console.log(data);
       setNam(data.hits[0].name);
       setPri(data.hits[0].price);
@@ -367,9 +378,9 @@ export const Camera = () => {
       setIsOpen(true);
       setIsError(false);
     } catch (error) {
+      console.error("エラーです:", error);
       setIsOpen(false);
       setIsError(true);
-      console.error("エラーです:", error);
     }
   }
 
