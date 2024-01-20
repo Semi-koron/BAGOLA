@@ -26,9 +26,9 @@ export default function Home() {
   const [w02, setw02] = useState<string>();
   const [w03, setw03] = useState<string>();
 
-  const [number, setNum] = useState<number>();
+  const [number, setNum] = useState<any>();
   const [name, setNam] = useState<string>("");
-  const [price, setPri] = useState<number>();
+  const [price, setPri] = useState<any>();
   const [image, setIma] = useState<string>("");
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -292,7 +292,7 @@ export default function Home() {
   }
   const changeNum = (event: ChangeEvent<HTMLInputElement>) => {
     console.log(event);
-    setNum(event.target.value);
+    setNum(Number(event.target.value));
   };
 
   async function fetchname() {
