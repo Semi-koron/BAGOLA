@@ -13,10 +13,14 @@ import {
   onValue,
 } from "firebase/database";
 import { getAuth } from "firebase/auth";
-import styles from "../../../../../styles/[roomId].module.css";
+import styles from "../../../../../styles/roomId.module.css";
+
+interface LogEntry {
+  Log: string;
+}
 
 export default function Home() {
-  const [ButtleLog, setButtleLog] = useState<string[]>([]);
+  const [ButtleLog, setButtleLog] = useState<LogEntry[]>([]);
   const [whoIs, setWhoIs] = useState<string>("spectators");
   const [redirectWho, setRedirectWho] = useState<boolean>(false);
   const [Member1Name, setMember1Name] = useState<string>("");
@@ -1030,23 +1034,22 @@ export default function Home() {
       setPlayerw03("エラーです");
     }
   }, [w00, w01, w02, w03]);
-
-  window.addEventListener("popstate", function (e) {
-    if (
-      member1Status != "ready" &&
-      member2Status != "ready" &&
-      member1Status != "win" &&
-      member2Status != "win" &&
-      member1Status != "lose" &&
-      member2Status != "lose" &&
-      member1Status != "draw" &&
-      member2Status != "draw"
-    ) {
-      giveUp();
-    } else {
-      leftRoom();
-    }
-  });
+  // window.addEventListener("popstate", function (e) {
+  //   if (
+  //     member1Status != "ready" &&
+  //     member2Status != "ready" &&
+  //     member1Status != "win" &&
+  //     member2Status != "win" &&
+  //     member1Status != "lose" &&
+  //     member2Status != "lose" &&
+  //     member1Status != "draw" &&
+  //     member2Status != "draw"
+  //   ) {
+  //     giveUp();
+  //   } else {
+  //     leftRoom();
+  //   }
+  // });
 
   function giveUp() {
     if (whoIs == "Member1") {
@@ -1246,7 +1249,7 @@ export default function Home() {
             <div className={styles.log}>
               {ButtleLog &&
                 Object.keys(ButtleLog).length > 0 &&
-                Object.keys(ButtleLog).map((key, index) => {
+                Object.keys(ButtleLog).map((key: any, index: number) => {
                   return <div key={index}>{ButtleLog[key].Log}</div>;
                 })}
             </div>

@@ -6,6 +6,12 @@ import Header from "../../../../components/header/header";
 import Footer from "../../../../components/footer/footer";
 import styles from "../../../../styles/search.module.css";
 
+declare global {
+  interface Window {
+    BarcodeDetector: any;
+  }
+}
+
 export const Camera = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [deviceMessage, setDeviceMessage] = useState<string>("");
@@ -29,7 +35,7 @@ export const Camera = () => {
   const [w03, setw03] = useState<string>();
 
   const [name, setNam] = useState<string>("");
-  const [price, setPri] = useState<number>();
+  const [price, setPri] = useState<any>();
   const [image, setIma] = useState<string>("");
 
   const [statusVisible, setStatusVisible] = useState<boolean>(false);
@@ -45,7 +51,7 @@ export const Camera = () => {
   useEffect(() => {
     if (cameraOn) {
       const codedetecter = async () => {
-        if (window.BarcodeDetector == undefined) {
+        if ((window as any).BarcodeDetector == undefined) {
           setDeviceMessage("対応していません");
           return;
         } else {
@@ -60,7 +66,7 @@ export const Camera = () => {
             videoRef.current.srcObject = stream;
             videoRef.current.play();
 
-            const detector = new BarcodeDetector({
+            const detector = new window.BarcodeDetector({
               formats: ["upc_a"],
             });
 

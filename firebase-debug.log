@@ -1,0 +1,618 @@
+[debug] [2024-01-02T16:33:26.067Z] ----------------------------------------------------------------------
+[debug] [2024-01-02T16:33:26.071Z] Command:       /home/semikoron/.volta/tools/image/node/20.10.0/bin/node /home/semikoron/.volta/tools/image/packages/firebase-tools/bin/firebase deploy --only hosting,database
+[debug] [2024-01-02T16:33:26.072Z] CLI Version:   13.0.2
+[debug] [2024-01-02T16:33:26.072Z] Platform:      linux
+[debug] [2024-01-02T16:33:26.073Z] Node Version:  v20.10.0
+[debug] [2024-01-02T16:33:26.073Z] Time:          Wed Jan 03 2024 01:33:26 GMT+0900 (Japan Standard Time)
+[debug] [2024-01-02T16:33:26.073Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-02T16:33:26.197Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-02T16:33:26.198Z] > authorizing via signed-in user (6jimoto6@gmail.com)
+[debug] [2024-01-02T16:33:26.199Z] [iam] checking project bbuttle for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-02T16:33:26.202Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/bbuttle:testIamPermissions [none]
+[debug] [2024-01-02T16:33:26.203Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/bbuttle:testIamPermissions x-goog-quota-user=projects/bbuttle
+[debug] [2024-01-02T16:33:26.203Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/bbuttle:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-02T16:33:27.060Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/bbuttle:testIamPermissions 200
+[debug] [2024-01-02T16:33:27.060Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/bbuttle:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-02T16:33:27.062Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bbuttle [none]
+[debug] [2024-01-02T16:33:27.400Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bbuttle 200
+[debug] [2024-01-02T16:33:27.400Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bbuttle {"projectId":"bbuttle","projectNumber":"542922062126","displayName":"BButtle","name":"projects/bbuttle","resources":{"hostingSite":"bbuttle","realtimeDatabaseInstance":"bbuttle-default-rtdb","storageBucket":"bbuttle.appspot.com","locationId":"asia-southeast1"},"state":"ACTIVE","etag":"1_ab7f405e-ba59-4b1b-aac2-1de5e994269d"}
+[debug] [2024-01-02T16:33:31.642Z] defaultcredentials: writing to file /home/semikoron/.config/firebase/6jimoto6_gmail_com_application_default_credentials.json
+[debug] [2024-01-02T16:33:31.647Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/bbuttle/sites pageToken=&pageSize=10
+[debug] [2024-01-02T16:33:32.358Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/bbuttle/sites 200
+[debug] [2024-01-02T16:33:32.358Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/bbuttle/sites {"sites":[{"name":"projects/bbuttle/sites/bbuttle","defaultUrl":"https://bbuttle.web.app","appId":"1:542922062126:web:9bd1cd84a564e0ce3d62bf","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-02T16:33:32.359Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:542922062126:web:9bd1cd84a564e0ce3d62bf/config [none]
+[debug] [2024-01-02T16:33:33.111Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:542922062126:web:9bd1cd84a564e0ce3d62bf/config 200
+[debug] [2024-01-02T16:33:33.111Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:542922062126:web:9bd1cd84a564e0ce3d62bf/config {"projectId":"bbuttle","appId":"1:542922062126:web:9bd1cd84a564e0ce3d62bf","databaseURL":"https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"bbuttle.appspot.com","locationId":"asia-southeast1","apiKey":"AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w","authDomain":"bbuttle.firebaseapp.com","messagingSenderId":"542922062126","measurementId":"G-MJXYRW3NWC"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-01-02T16:33:40.829Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/bbuttle/sites/bbuttle [none]
+[debug] [2024-01-02T16:33:41.380Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/bbuttle/sites/bbuttle 200
+[debug] [2024-01-02T16:33:41.380Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/bbuttle/sites/bbuttle {"name":"projects/bbuttle/sites/bbuttle","defaultUrl":"https://bbuttle.web.app","appId":"1:542922062126:web:9bd1cd84a564e0ce3d62bf","type":"DEFAULT_SITE"}
+[info]    Linting and checking validity of types ...
+
+[info] 
+./src/pages/home/battle/box/index.tsx
+64:6  Warning: React Hook useEffect has a missing dependency: 'dbRef'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+248:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/pages/home/battle/matching/index.tsx
+77:6  Warning: React Hook useEffect has a missing dependency: 'dbRef'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+94:6  Warning: React Hook useEffect has missing dependencies: 'dbRef' and 'userUUID'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+233:6  Warning: React Hook useEffect has missing dependencies: 'handleClick', 'roomId', 'roomStatus', 'sendStatus', and 'userUUID'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/pages/home/battle/matching/room/[roomId].tsx
+229:6  Warning: React Hook useEffect has missing dependencies: 'fetchButtleStatus1', 'fetchButtleStatus2', 'fetchButtlelog', 'getplayerw', 'player1Speed', 'player2Speed', 'processingBlocker', 'roomId', and 'whoIs'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+242:6  Warning: React Hook useEffect has a missing dependency: 'fetchButtleStatus1'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+248:6  Warning: React Hook useEffect has a missing dependency: 'damegeCal'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+252:6  Warning: React Hook useEffect has a missing dependency: 'getplayerw'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+256:6  Warning: React Hook useEffect has a missing dependency: 'calDeltaStatus'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+270:6  Warning: React Hook useEffect has missing dependencies: 'player1deltaAttack', 'player1deltaDefence', 'player1deltaHP', 'player1deltaSpeed', 'player2deltaAttack', 'player2deltaDefence', 'player2deltaHP', and 'player2deltaSpeed'. Either include them or remove the dependency array. You can also do a functional update 'setPlayer1deltaAttack(p => ...)' if you only need 'player1deltaAttack' in the 'setPlayer1deltaAttack' call.  react-hooks/exhaustive-deps
+866:6  Warning: React Hook useEffect has missing dependencies: 'dbRef' and 'roomId'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+894:6  Warning: React Hook useEffect has missing dependencies: 'dbRef' and 'roomId'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+922:6  Warning: React Hook useEffect has missing dependencies: 'dbRef' and 'roomId'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+1212:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+1212:15  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+1226:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+1226:15  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
+./src/pages/home/profile/index.tsx
+40:6  Warning: React Hook useEffect has a missing dependency: 'dbRef'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/pages/home/scan/camera/index.tsx
+99:6  Warning: React Hook useEffect has a missing dependency: 'sendNum'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+450:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+450:25  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
+./src/pages/home/scan/input/index.tsx
+390:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+390:25  Warning: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
+
+./src/pages/login/index.tsx
+115:6  Warning: React Hook useEffect has a missing dependency: 'router'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[info]    ▲ Next.js 14.0.1
+
+[info]    - Environments: .env.local
+
+   Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/15) ...
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(13) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'database' => [Provider],
+      'fire-rtdb-node-version' => [Provider],
+      'fire-rtdb-esm2017-version' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider]
+    }
+  }
+}
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(16) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'fire-core-compat-version' => [Provider],
+      'database' => [Provider],
+      'fire-rtdb-node-version' => [Provider],
+      'fire-rtdb-esm2017-version' => [Provider],
+      'database-compat' => [Provider],
+      'fire-rtdb-compat-node-version' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider]
+    }
+  }
+}
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(13) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'database' => [Provider],
+      'fire-rtdb-node-version' => [Provider],
+      'fire-rtdb-esm2017-version' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider]
+    }
+  }
+}
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(6) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider]
+    }
+  }
+}
+FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(6) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider]
+    }
+  }
+}
+FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(13) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider],
+      'database' => [Provider],
+      'fire-rtdb-node-version' => [Provider],
+      'fire-rtdb-esm2017-version' => [Provider]
+    }
+  }
+}
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(13) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider],
+      'database' => [Provider],
+      'fire-rtdb-node-version' => [Provider],
+      'fire-rtdb-esm2017-version' => [Provider]
+    }
+  }
+}
+   Generating static pages (3/15) 
+FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(13) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'database' => [Provider],
+      'fire-rtdb-node-version' => [Provider],
+      'fire-rtdb-esm2017-version' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider]
+    }
+  }
+}
+FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(13) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider],
+      'database' => [Provider],
+      'fire-rtdb-node-version' => [Provider],
+      'fire-rtdb-esm2017-version' => [Provider]
+    }
+  }
+}
+
+[info] ReferenceError: window is not defined
+    at Home (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/.next/server/pages/home/battle/matching/room/[roomId].js:1:13730)
+    at Wc (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:68:44)
+    at Zc (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:70:253)
+    at Z (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:76:89)
+    at Zc (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:70:481)
+    at Z (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:76:89)
+    at $c (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:78:98)
+    at bd (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:77:404)
+    at Z (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:76:217)
+    at Zc (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:71:479)
+
+Error occurred prerendering page "/home/battle/matching/room/[roomId]". Read more: https://nextjs.org/docs/messages/prerender-error
+ReferenceError: window is not defined
+    at Home (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/.next/server/pages/home/battle/matching/room/[roomId].js:1:13730)
+    at Wc (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:68:44)
+    at Zc (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:70:253)
+    at Z (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:76:89)
+    at Zc (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:70:481)
+    at Z (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:76:89)
+    at $c (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:78:98)
+    at bd (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:77:404)
+    at Z (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:76:217)
+    at Zc (/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js:71:479)
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(11) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider],
+      'app-check-internal' => [Provider]
+    }
+  }
+}
+   Generating static pages (7/15) 
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(16) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'fire-core-compat-version' => [Provider],
+      'database' => [Provider],
+      'fire-rtdb-node-version' => [Provider],
+      'fire-rtdb-esm2017-version' => [Provider],
+      'database-compat' => [Provider],
+      'fire-rtdb-compat-node-version' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider]
+    }
+  }
+}
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(6) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider]
+    }
+  }
+}
+
+[info]    Generating static pages (11/15) 
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(13) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'database' => [Provider],
+      'fire-rtdb-node-version' => [Provider],
+      'fire-rtdb-esm2017-version' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider]
+    }
+  }
+}
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(6) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider]
+    }
+  }
+}
+
+[info] FirebaseAppImpl {
+  _isDeleted: false,
+  _options: {
+    apiKey: 'AIzaSyBUkpG_xZgh_dgLzo1bNT-TAxm_slR1l5w',
+    authDomain: 'bbuttle.firebaseapp.com',
+    projectId: 'bbuttle',
+    storageBucket: 'bbuttle.appspot.com',
+    messagingSenderId: '542922062126',
+    appId: '1:542922062126:web:9bd1cd84a564e0ce3d62bf',
+    databaseURL: 'https://bbuttle-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  },
+  _config: { name: '[DEFAULT]', automaticDataCollectionEnabled: false },
+  _name: '[DEFAULT]',
+  _automaticDataCollectionEnabled: false,
+  _container: ComponentContainer {
+    name: '[DEFAULT]',
+    providers: Map(16) {
+      'platform-logger' => [Provider],
+      'heartbeat' => [Provider],
+      'fire-core-version' => [Provider],
+      'fire-core-esm2017-version' => [Provider],
+      'fire-js-version' => [Provider],
+      'app' => [Provider],
+      'fire-core-compat-version' => [Provider],
+      'database' => [Provider],
+      'fire-rtdb-node-version' => [Provider],
+      'fire-rtdb-esm2017-version' => [Provider],
+      'database-compat' => [Provider],
+      'fire-rtdb-compat-node-version' => [Provider],
+      'auth' => [Provider],
+      'auth-internal' => [Provider],
+      'fire-auth-node-version' => [Provider],
+      'fire-auth-esm2017-version' => [Provider]
+    }
+  }
+}
+
+[info]  ✓ Generating static pages (15/15) 
+
+[info] 
+> Export encountered errors on following paths:
+	/home/battle/matching/room/[roomId]
+
+[debug] [2024-01-02T16:34:17.945Z] Error: ENOENT: no such file or directory, open '/home/semikoron/Webapp/KCL/KCL-hack/kcl-hack/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.

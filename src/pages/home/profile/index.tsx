@@ -10,7 +10,6 @@ import styles from "../../../styles/profile.module.css";
 export default function Home() {
   const [userName, setUsername] = useState<string>("");
   const [userIntro, setIntro] = useState<string>("");
-  const [userUUID, setUUID] = useState<string>("");
   const [redirect, setRedirect] = useState<boolean>(false);
   const [JSvalid, setJSvalid] = useState<boolean>(false);
   const dbRef = ref(getDatabase());
@@ -22,8 +21,6 @@ export default function Home() {
   useEffect(() => {
     const fetchProfile = async () => {
       const UUID = await getUid();
-      console.log(UUID);
-      setUUID(UUID);
       get(child(dbRef, `User/${UUID}/Profile/`))
         .then((snapshot) => {
           if (snapshot.exists()) {

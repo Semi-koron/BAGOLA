@@ -16,7 +16,7 @@ interface Member {
 
 export default function Home() {
   const [number, setNum] = useState<string>();
-  const [roomNum, setRoomNum] = useState<string>();
+  const [roomId, setroomId] = useState<string>();
   const [member1, setMember1] = useState<string>();
   const [member2, setMember2] = useState<string>();
   const [memberUUID, setMemberUUID] = useState<Member>();
@@ -24,7 +24,7 @@ export default function Home() {
   const [ownName, setOwnName] = useState<string>();
   const [roomStatus, setRoomStatus] = useState<string>();
   const [visible, setVisible] = useState<boolean>(false);
-  const [userUUID, setUUID] = useState<string>("");
+  const [userUUID, setUUID] = useState<any>("");
   const [userChara, setuserChara] = useState<string>("");
   const [sendStatus, setSendStatus] = useState<Object>();
   const [redirect, setRedirect] = useState<boolean>(false);
@@ -94,7 +94,7 @@ export default function Home() {
   }, [userChara]);
 
   const lookForRoom = async () => {
-    setRoomNum(number);
+    setroomId(number);
     console.log(number);
     get(child(dbRef, `Room/${number}/`))
       .then((snapshot) => {
@@ -201,40 +201,40 @@ export default function Home() {
   useEffect(() => {
     if (ownName !== undefined) {
       const db = getDatabase();
-      async function joining() {
+      const joining = async () => {
         if (roomStatus === "empty") {
-          await set(ref(db, `Room/${roomNum}/Member/`), {
+          await set(ref(db, `Room/${roomId}/Member/`), {
             Member1: userUUID,
             Member1Name: ownName,
           });
-          await set(ref(db, `Room/${roomNum}/ButtleStatus/`), {
+          await set(ref(db, `Room/${roomId}/ButtleStatus/`), {
             Member1: sendStatus,
           });
-          await set(ref(db, `Room/${roomNum}/MemberStatus/`), {
+          await set(ref(db, `Room/${roomId}/MemberStatus/`), {
             Member1: "ready",
           });
         } else if (roomStatus === "P2empty") {
-          await update(ref(db, `Room/${roomNum}/Member/`), {
+          await update(ref(db, `Room/${roomId}/Member/`), {
             Member2: userUUID,
             Member2Name: ownName,
           });
-          await update(ref(db, `Room/${roomNum}/ButtleStatus/`), {
+          await update(ref(db, `Room/${roomId}/ButtleStatus/`), {
             Member2: sendStatus,
           });
-          await update(ref(db, `Room/${roomNum}/MemberStatus/`), {
+          await update(ref(db, `Room/${roomId}/MemberStatus/`), {
             Member2: "ready",
           });
         }
         handleClick();
         console.log("send");
-      }
+      };
       joining();
     }
   }, [ownName]);
 
   const router = useRouter();
   const handleClick = () => {
-    router.push(`../battle/matching/room/${roomNum}`);
+    router.push(`../battle/matching/room/${roomId}`);
   };
   if (JSvalid) {
     if (!charaIsNone) {
