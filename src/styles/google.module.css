@@ -1,8 +1,9 @@
 .button {
   display: inline-block;
-  width: 55vh;
-  padding: 0.75rem 1rem;
-  font-size: 2.5rem;
+  width: 200px;
+  padding: 0.3rem 0.75rem;
+  margin-left: 1rem;
+  font-size: 1.8rem;
   font-weight: bold;
   font-family: "Lucida Console", century;
   text-align: center;
